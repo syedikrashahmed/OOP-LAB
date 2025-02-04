@@ -2,6 +2,8 @@
 Write a main() program that displays an angle initialized with the constructor, and then, within a loop, allows the user to input any angle value, and then displays the value. You can use the hex character constant ‘\xF8’, which usually prints a degree (°) symbol.*/
 
 #include <iostream>
+#include <iomanip>
+
 using namespace std;
 
 class Angle {
@@ -23,7 +25,7 @@ class Angle {
     }
 
     void display() {
-        cout << degree << "\xF8" << minutes << "' " << direction << endl;
+        cout << degrees << '\xF8' << fixed << setprecision(1) << minutes << "'" << " " << direction << endl;
     }
 };
 
