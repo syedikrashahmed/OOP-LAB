@@ -25,7 +25,7 @@ class Angle {
     }
 
     void display() {
-        cout << degrees << '\xF8' << fixed << setprecision(1) << minutes << "'" << " " << direction << endl;
+        cout << degree << '\xF8' << fixed << setprecision(1) << minutes << "'" << " " << direction << endl;
     }
 };
 
