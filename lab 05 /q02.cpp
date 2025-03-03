@@ -6,10 +6,10 @@ using namespace std;
 class LoanHelper {
     const float interestRate;  
     float loanAmount;         
-    int repaymentMonths;      
+    int totalMonths;      
 
 public:
-    LoanHelper(float rate, float amount, int months) : interestRate(rate), loanAmount(amount), repaymentMonths(months) {
+    LoanHelper(float rate, float amount, int months) : interestRate(rate), loanAmount(amount), totalMonths(months) {
         if (interestRate < 0 || interestRate > 0.5) {
             cout << "Error: Interest rate must be between 0 and 0.5%." << endl;
             return;
@@ -17,11 +17,9 @@ public:
     }
 
     void calculateMonthlyPayment() {
-        float baseMonthlyPayment = loanAmount / repaymentMonths;
-        float monthlyPaymentWithInterest = baseMonthlyPayment * (1 + interestRate / 100);
-        cout << "You have to pay " << monthlyPaymentWithInterest
-             << " every month for " << repaymentMonths
-             << " months to repay your loan." << endl;
+        float base = loanAmount / totalMonths;
+        float monthly = base * (1 + interestRate / 100);
+        cout << "You have to pay " << monthly << " every month for " << totalMonths << " months to repay your loan." << endl;
     }
 };
 
